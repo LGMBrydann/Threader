@@ -1,0 +1,46 @@
+name = "threader"
+
+main = "worker.js"
+
+compatibility_date = "2026-09-28"
+
+workers_dev = true
+
+
+# ==========================================================
+# STATIC WEBSITE
+# ==========================================================
+
+[assets]
+
+directory = "./public"
+
+binding = "ASSETS"
+
+# API requests always go through worker.js.
+run_worker_first = ["/api/*"]
+
+
+# ==========================================================
+# D1 DATABASE
+# ==========================================================
+
+[[d1_databases]]
+
+binding = "DB"
+
+database_name = "threader-db"
+
+database_id = "PUT-YOUR-D1-DATABASE-ID-HERE"
+
+
+# ==========================================================
+# VARIABLES
+# ==========================================================
+
+# Don't put your actual secret here.
+#
+# Set it with:
+#
+# npx wrangler secret put WORKER_SECRET
+#
