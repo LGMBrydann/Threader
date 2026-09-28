@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS autothreads (
+	guild_id TEXT NOT NULL,
+	channel_id TEXT NOT NULL,
+	keyword TEXT NOT NULL,
+	thread_name TEXT NOT NULL,
+	counter INTEGER NOT NULL DEFAULT 1,
+	auto_archive_duration INTEGER NOT NULL DEFAULT 1440,
+	enabled INTEGER NOT NULL DEFAULT 1,
+	created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (guild_id, channel_id)
+);
